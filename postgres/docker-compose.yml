@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=cablo
+      - POSTGRES_USER=cablo
+      - POSTGRES_PASSWORD=cablo
+    volumes:
+      - ./create-db.sql:/docker-entrypoint-initdb.d/create-db.sql
+    ports:
+      - 5432:5432

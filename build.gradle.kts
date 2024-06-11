@@ -4,7 +4,6 @@ plugins {
     id("com.google.devtools.ksp") version "1.9.23-1.0.19"
     id("com.github.johnrengelman.shadow") version "8.1.1"
     id("io.micronaut.application") version "4.4.0"
-    id("io.micronaut.aot") version "4.4.0"
 }
 
 version = "0.1"
@@ -50,6 +49,7 @@ micronaut {
         incremental(true)
         annotations("com.cablo.ms.*")
     }
+/*
     aot {
     // Please review carefully the optimizations enabled below
     // Check https://micronaut-projects.github.io/micronaut-aot/latest/guide/ for more details
@@ -62,6 +62,7 @@ micronaut {
         optimizeNetty = true
         replaceLogbackXml = true
     }
+*/
 }
 
 

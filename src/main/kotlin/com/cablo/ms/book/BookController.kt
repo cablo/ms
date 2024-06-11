@@ -8,6 +8,9 @@ class BookController(private val bookRepository: BookRepository) {
 
     @Get("/books")
     fun index(): Any {
+//        for (i in 1..10) {
+//            bookRepository.save(Book(null, 1, "Name $i", "Author $i"))
+//        }
         return bookRepository.findAll()
     }
 }
