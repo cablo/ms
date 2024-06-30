@@ -1,7 +1,0 @@
-datasources:
-  default:
-    url: jdbc:postgresql://localhost:5432/cablo
-    driverClassName: org.postgresql.Driver
-    username: cablo
-    password: cablo
-    dialect: POSTGRES

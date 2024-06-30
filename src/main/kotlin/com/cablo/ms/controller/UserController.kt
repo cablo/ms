@@ -1,5 +1,7 @@
-package com.cablo.ms.user
+package com.cablo.ms.controller
 
+import com.cablo.ms.db.User
+import com.cablo.ms.db.UserRepository
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 
@@ -7,7 +9,7 @@ import io.micronaut.http.annotation.Get
 class UserController(private val userRepository: UserRepository) {
 
     @Get("/users")
-    fun index(): Any {
+    fun users(): List<User> {
         return userRepository.findAll()
     }
 }
