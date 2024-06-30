@@ -38,12 +38,14 @@ This is demo of Micronaut with Postgres in docker containers.
  
 3. To run in docker-compose or debug locally, rebuild project `rebuild.bat` and run in `wsl`:
  
-         ./ss.sh    # start docker compose with postgres and ms app on port 8000 (if failed, ctrl+c and run again)
+         ./ss.sh    # start docker compose with postgres and ms app on http://localhost:8000 (if failed, ctrl+c and run again)
          ./q.sh     # to shut down docker compose
 
 4. To debug, run app in IDE on default port 8080. It connects to postgres in previous docker-compose container.
+  
+5. To debug FE, run step 3 and then run `npm run start` in dir `ms-fe` in IDE. It connects to previous docker-compose ms app for data.
 
-5. To run in k8s, clean docker with `./docker-prune.sh` and run `./ss.sh` to create local docker images `cablo/postgres-image` and `cablo/ms-image`. Then switch to dir `k8s` and run
+6. To run in k8s, clean docker with `./docker-prune.sh` and run `./ss.sh` to create local docker images `cablo/postgres-image` and `cablo/ms-image`. Then switch to dir `k8s` and run
          
          ./images-publish.sh
 
@@ -57,7 +59,7 @@ This is demo of Micronaut with Postgres in docker containers.
 
    To shut down k8s, use commands from `q.sh`.
 
-6. Try to run more replicas for `ms` and see connection count in postgres
+7. Try to run more replicas for `ms` and see connection count in postgres
    
          SELECT * FROM pg_stat_database
 

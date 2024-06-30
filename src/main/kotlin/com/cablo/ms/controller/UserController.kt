@@ -9,7 +9,5 @@ import io.micronaut.http.annotation.Get
 class UserController(private val userRepository: UserRepository) {
 
     @Get("/users")
-    fun users(): List<User> {
-        return userRepository.findAll()
-    }
+    fun users(): List<User> = userRepository.findAll()
 }

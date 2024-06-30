@@ -1,0 +1,24 @@
+micronaut:
+  datasources:
+    default:
+      url: jdbc:postgresql://localhost:5432/cablo
+      driverClassName: org.postgresql.Driver
+      username: cablo
+      password: cablo
+      dialect: POSTGRES
+      db-type: postgres
+  # serve static content (react fe) from resources/public
+  router:
+    static-resources:
+      react:
+        paths: classpath:public
+        mapping: /public/**
+  # allow to fetch data from react debug http://localhost:3000
+  server:
+    cors:
+      enabled: true
+      configurations:
+        allowedOrigins:
+          - "http://localhost:3000"
+
+env_cablo: DEFAULT-VALUE-FOR-env-cablo

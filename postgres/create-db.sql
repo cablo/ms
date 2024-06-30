@@ -3,8 +3,9 @@ CREATE TABLE public."user" (
    "name" text NOT NULL,
    "address" text NOT NULL
 );
-INSERT INTO public."user" ("name", address) VALUES('cablo', 'podolska');
-INSERT INTO public."user" ("name", address) VALUES('novak', 'praha');
+INSERT INTO public."user" ("name", address) VALUES('Karel Cabel', 'Podolska');
+INSERT INTO public."user" ("name", address) VALUES('Jan Novak', 'Praha');
+INSERT INTO public."user" ("name", address) VALUES('John Doe', 'Nowhere');
 
 
 CREATE TABLE public."car" (
