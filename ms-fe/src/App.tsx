@@ -3,6 +3,8 @@ import {Card, Flex} from "antd";
 import {UserTable} from "./tables/UserTable";
 import {CarTable} from "./tables/CarTable";
 
+export const FETCH_BASE_URL = process.env.REACT_APP_FETCH_BASE_URL ?? '';
+
 export function App() {
     return <>
         <Flex vertical align="center" style={{height: '100vh', padding: '0 100px', backgroundColor: '#c1ded4'}}>

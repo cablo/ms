@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Table} from "antd";
+import {FETCH_BASE_URL} from "../App";
 
 export function CarTable() {
     const [data, setData] = useState<any>([]);
@@ -7,15 +8,13 @@ export function CarTable() {
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch('http://localhost:8000/cars');
-                const data = await response.json();
-                setData(data);
+                const response = await fetch(`${FETCH_BASE_URL}/cars`);
+                setData(await response.json());
             } catch (e) {
                 console.error('Fetch error', e);
             }
         })();
     }, []);
-
 
     const columns = [
         {

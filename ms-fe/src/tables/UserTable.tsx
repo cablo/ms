@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Table} from "antd";
+import {FETCH_BASE_URL} from "../App";
 
 export function UserTable() {
     const [data, setData] = useState<any>([]);
@@ -7,9 +8,8 @@ export function UserTable() {
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch('http://localhost:8000/users');
-                const data = await response.json();
-                setData(data);
+                const response = await fetch(`${FETCH_BASE_URL}/users`);
+                setData(await response.json());
             } catch (e) {
                 console.error(e);
             }
