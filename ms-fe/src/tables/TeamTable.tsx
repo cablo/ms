@@ -2,45 +2,36 @@ import React, {useEffect, useState} from 'react';
 import {Table} from "antd";
 import {FETCH_BASE_URL} from "../App";
 
-export function CarTable() {
+export function TeamTable() {
     const [data, setData] = useState<any>([]);
 
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch(`${FETCH_BASE_URL}/cars`);
+                const response = await fetch(`${FETCH_BASE_URL}/teams`);
                 setData(await response.json());
             } catch (e) {
-                console.error('Fetch error', e);
+                console.error(e);
             }
         })();
     }, []);
+
 
     const columns = [
         {
             title: 'id',
             dataIndex: 'id',
-            key: 'id',
+            key: 'id'
         },
         {
-            title: 'userid',
-            dataIndex: 'userId',
-            key: 'userid',
+            title: 'Name',
+            dataIndex: 'name',
+            key: 'name'
         },
         {
-            title: 'Manufacturer',
-            dataIndex: 'make',
-            key: 'make',
-        },
-        {
-            title: 'Model',
-            dataIndex: 'model',
-            key: 'model',
-        },
-        {
-            title: 'Year',
-            dataIndex: 'year',
-            key: 'year',
+            title: 'Location',
+            dataIndex: 'location',
+            key: 'location'
         }
     ];
 

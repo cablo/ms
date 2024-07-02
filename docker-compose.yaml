@@ -9,8 +9,6 @@ services:
       - POSTGRES_DB=cablo
       - POSTGRES_USER=cablo
       - POSTGRES_PASSWORD=cablo
-#    volumes:
-#      - ./postgres/create-db.sql:/docker-entrypoint-initdb.d/create-db.sql
     ports:
       - 5432:5432
 

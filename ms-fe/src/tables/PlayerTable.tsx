@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react';
 import {Table} from "antd";
 import {FETCH_BASE_URL} from "../App";
 
-export function UserTable() {
+export function PlayerTable() {
     const [data, setData] = useState<any>([]);
 
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch(`${FETCH_BASE_URL}/users`);
+                const response = await fetch(`${FETCH_BASE_URL}/players`);
                 setData(await response.json());
             } catch (e) {
                 console.error(e);
@@ -16,22 +16,26 @@ export function UserTable() {
         })();
     }, []);
 
-
     const columns = [
         {
             title: 'id',
             dataIndex: 'id',
-            key: 'id',
+            key: 'id'
+        },
+        {
+            title: 'teamId',
+            dataIndex: 'teamId',
+            key: 'teamId'
         },
         {
             title: 'Name',
             dataIndex: 'name',
-            key: 'name',
+            key: 'name'
         },
         {
-            title: 'Address',
-            dataIndex: 'address',
-            key: 'address',
+            title: 'Birth Year',
+            dataIndex: 'birthYear',
+            key: 'birthYear'
         }
     ];
 
